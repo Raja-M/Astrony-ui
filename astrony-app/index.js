@@ -14,16 +14,15 @@ app.use('/js', express.static(__dirname + '/public/js'));
 app.use('/images', express.static(__dirname + '/public/images'));
 app.use('/scss', express.static(__dirname + '/public/scss'));
 
-const sslServer = https.createServer(
-    { 
-        key: fs.readFileSync(path.join(__dirname, 'certs', 'astrony.com.key')),
-        cert: fs.readFileSync(path.join(__dirname, 'certs', 'astrony.com.crt')),
-    },app
-)
-sslServer.listen(443, () => console.log('Secure server started on port 443'));
+// const sslServer = https.createServer(
+//     { 
+//         key: fs.readFileSync(path.join(__dirname, 'certs', 'astrony.com.key')),
+//         cert: fs.readFileSync(path.join(__dirname, 'certs', 'astrony.com.crt')),
+//     },app
+// )
+// sslServer.listen(443, () => console.log('Secure server started on port 443'));
 
-/*var server = app.listen(80, function(){
+var server = app.listen(80, function(){
     var port = server.address().port;
         console.log("Server started at http://localhost:%s", port);
 });
-*/
